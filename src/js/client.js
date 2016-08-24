@@ -55,15 +55,15 @@ const counterList = (state = 0, action) => {
  
   switch (action.type){
     case 'NEXT_STATE':
-      if (state + 1 > 2){
-        return 0;
-      }
-      return state + 1;
-    case 'PREVIOUS':
       if (state - 1 < 0){
         return 2;
       }
-      return state - 1 ;
+      return state - 1;
+    case 'PREVIOUS':
+      if (state + 1 > 2){
+        return 0;
+      }
+      return state + 1 ;
     default:
       return state;
   }
