@@ -31,24 +31,16 @@ const TrafficLight = ({state}) =>{
   }
 
   return (
-  <div>
-  <div class="traffic-light">
-  {html0}
-  {html1}
-  {html2}
-  </div>
-  <button onClick={() => store.dispatch({type: 'NEXT_STATE'})
-    }>Change</button>
-  </div>
-    )
+    <div>
+      <div class="traffic-light">
+      {html0}
+      {html1}
+      {html2}
+      </div>
+      <button onClick={() => store.dispatch({type: 'NEXT_STATE'})}>Change</button>
+    </div>
+  )
 }
-
-
-/*
-si no hay libreria de immutable
-state = []
-return [...state, 0]
-*/
 
 //Reducer
 const counterList = (state = 0, action) => {
@@ -77,16 +69,6 @@ const render = () => {
     <TrafficLight state={ store.getState() } />,
     document.getElementById('root')
   );
-
-
-  // ReactDOM.render(
-  //   <Counter 
-  //     value={999}
-  //     incrementAction={()=> {alert("incremento")}}
-  //     decrementAction={()=> {alert("decremento")}}
-  //     removeAction={()=> {alert("borrar")}} />,
-  //   document.getElementById('root')
-  // );
 }
 
 store.subscribe(render);
